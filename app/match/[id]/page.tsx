@@ -54,12 +54,7 @@ export default function MatchPage() {
         {!loaded ? (
           <div className="loading">Yükleniyor…</div>
         ) : notFound || !match ? (
-          <>
-            <button className="back-btn" onClick={() => router.push('/')}>
-              ← Tüm maçlar
-            </button>
-            <div className="empty">Maç bulunamadı.</div>
-          </>
+          <div className="empty">Maç bulunamadı.</div>
         ) : sub.screen === 'detail' ? (
           <DetailScreen match={match} setSub={setSub} onChanged={loadMatch} />
         ) : (
@@ -117,9 +112,6 @@ function DetailScreen({
 
   return (
     <>
-      <button className="back-btn" onClick={() => router.push('/')}>
-        ← Tüm maçlar
-      </button>
       <div className="card">
         <h2>{m.name}</h2>
         <div className="note">
